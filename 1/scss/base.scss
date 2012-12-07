@@ -25,6 +25,7 @@ $experimental-support-for-svg: true;
     }
 
     .cartodb-popup-close-button {
+        font-family: "Helvetica", Arial;
         text-indent: -1000em;
         font-size:13px;
         font-weight: bold;
@@ -72,6 +73,7 @@ $experimental-support-for-svg: true;
         h1 {
             margin: 0;
             font: bold 21px/25px "Helvetica Neue", "Helvetica", Arial;
+            letter-spacing:0;
             color: #fff;
         }
 

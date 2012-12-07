@@ -7,13 +7,14 @@ Imageless version of beautiful CartoDB 2.0 Tooltips (InfoBoxes), as seen on [san
 ### Windows
 
 - Firefox 17
-- Google Chrome 23
+- Chrome 23
 - Opera 12
 - IE 9
 
 ### MacOS
 
-- None (so far)
+- Chrome 23
+- Safari 5
 
 ### Linux
 
@@ -24,5 +25,8 @@ Imageless version of beautiful CartoDB 2.0 Tooltips (InfoBoxes), as seen on [san
 - HTML
 - SCSS + Compass
 
-## Demo
+## Live Demo
 [@ 100px.com](http://www.100px.com/divertimenti/1/)
+
+## Source
+[@ GitHub](https://github.com/ala747/divertimenti/tree/master/1)
