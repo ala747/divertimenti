@@ -1,0 +1,178 @@
+@import "compass";
+$experimental-support-for-svg: true;
+
+/**
+ * Divertimento I
+ * CartoDB 2.0 Imageless Tooltips (InfoBoxes)
+ * Tested in: IE9, FF 17, Chrome 23, Opera 12
+ */
+body {
+    padding: 20px;
+    background: url(../img/carto-bkg.jpg) no-repeat 0 0;
+}
+.cartodb-popup {
+    font-family: "Helvetica Neue", "Helvetica", Arial;
+    background-color: #fff;
+    position: relative;
+    width: 218px;
+    margin:4px 4px 22px;
+    @include box-sizing(border-box);
+    @include border-radius(4px);
+    @include box-shadow(0 0 0 4px rgba(0, 0, 0, 0.2));
+
+    *, *:before, *:after {
+        @include box-sizing(border-box);
+    }
+
+    .cartodb-popup-close-button {
+        text-indent: -1000em;
+        font-size:13px;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+        background-color: #fff;
+        color: #397DBA;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: 1;
+        text-decoration: none;
+        @include border-radius(100%);
+        @include box-shadow(0 0 0 3px rgba(0, 0, 0, 0.2));
+
+        &:hover {
+            color: #2B68A8;
+            @include box-shadow(0 0 0 3px rgba(0, 0, 0, 0.3));
+        }
+
+        &:before {
+            content:"\00d7";
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            text-indent: 0;
+        }
+    }
+
+    .cartodb-popup-header {
+        position: relative;
+        max-height: 105px;
+        overflow: hidden;
+        padding: 13px 15px 17px;
+        background: #4289c6;
+        @include background-image(linear-gradient( top, #4289c6, #2b68a8));
+        @include border-radius(4px 4px 0 0);
+
+        h1 {
+            margin: 0;
+            font: bold 21px/25px "Helvetica Neue", "Helvetica", Arial;
+            color: #fff;
+        }
+
+        h4 {
+            color:#1F4C7F;
+        }
+
+        .separator {
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            right: 4px;
+            height: 1px;
+            background: #225386;
+        }
+    }
+
+    .cartodb-popup-content-wrapper {
+        padding: 12px 15px 0;
+        overflow-x: hidden;
+    }
+
+    .cartodb-popup-tip-container {
+        height: 15px;
+        @include border-radius(0 0 4px 4px);
+
+        &:after {
+            position: absolute;
+            bottom: -10px;
+            left: 23px;
+            content: '';
+            border: 5px solid #fff;
+            border-color: #fff transparent transparent #fff;
+            width:0;
+            height: 0;
+            z-index: 1
+        }
+    }
+
+    &:after {
+        position: absolute;
+        bottom: -18px;
+        left: 20px;
+        content: '';
+        border: 7px solid #fff;
+        border-color: rgba(0,0,0,.2) transparent transparent rgba(0,0,0,.2);
+        width:0;
+        height: 0;
+        z-index: -1;
+    }
+}
+
+
+/*** Color Schemes ***/
+.cartodb-popup {
+    /* Yellow */
+    &.yellow {
+        .cartodb-popup-close-button {
+            color: #FFBF0D;
+        }
+        .cartodb-popup-close-button:hover {
+            color: #f93;
+        }
+        .cartodb-popup-header {
+        background: #ffbf0d;
+        @include background-image(linear-gradient( top, #ffbf0d, #f93));
+        }
+        .separator {
+        background: #CC7A29;
+        }
+    }
+
+    /* Orange */
+    &.orange {
+        .cartodb-popup-close-button {
+            color: #FF6825;
+        }
+        .cartodb-popup-close-button:hover {
+            color: #f33;
+        }
+        .cartodb-popup-header {
+        background: #FF6825;
+        @include background-image(linear-gradient( top, #FF6825, #f33));
+        }
+        .separator {
+        background: #CC2929;
+        }
+    }
+
+    /* Green */
+    &.green {
+        .cartodb-popup-close-button {
+            color: #0c9;
+        }
+        .cartodb-popup-close-button:hover {
+            color: #00B185;
+        }
+        .cartodb-popup-header {
+        background: #0c9;
+        @include background-image(linear-gradient( top, #0c9, #00B185));
+        }
+        .separator {
+        background: #008E6A;
+        }
+    }
+}
